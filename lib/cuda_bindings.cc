@@ -85,6 +85,19 @@ PYBIND11_MODULE(_cuda_ops, m) {
         "y = x @ weight.T + bias");
 
   //-------------------------------------------------------------------------
+  // GEMM Operators
+  //-------------------------------------------------------------------------
+  m.def("gemm_fp32", &ac4k::gemm_fp32,
+        "FP32 General Matrix-Matrix Multiplication\n\n"
+        "C = alpha * A @ B + beta * C\n\n"
+        "Args:\n"
+        "    C: Output tensor [M, N], float32\n"
+        "    A: Input tensor [M, K], float32\n"
+        "    B: Input tensor [K, N], float32\n"
+        "    alpha: Scaling factor for A @ B\n"
+        "    beta: Scaling factor for C");
+
+  //-------------------------------------------------------------------------
   // RoPE Operators
   //-------------------------------------------------------------------------
   m.def("rope3d", &ac4k::rope3d,

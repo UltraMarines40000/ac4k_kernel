@@ -48,6 +48,13 @@ void linear_nvfp4(torch::Tensor &D, torch::Tensor const &A,
                   c10::optional<torch::Tensor> const &bias);
 
 //===----------------------------------------------------------------------===//
+// GEMM kernel interface
+//===----------------------------------------------------------------------===//
+
+void gemm_fp32(torch::Tensor &C, torch::Tensor const &A,
+               torch::Tensor const &B, float alpha, float beta);
+
+//===----------------------------------------------------------------------===//
 // RoPE kernel interface
 //===----------------------------------------------------------------------===//
 

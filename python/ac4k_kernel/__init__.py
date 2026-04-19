@@ -35,6 +35,9 @@ try:
     _backend = __backend__
     _arch = __arch__
 
+    # GEMM - import Python wrapper (not raw C++ binding) for user-friendly API
+    from .ops.gemm import gemm_fp32
+
 except ImportError:
     try:
         from ._rocm_ops import (
@@ -88,5 +91,6 @@ __all__ = [
     "quantize_fp8",
     "quantize_int8",
     "linear_nvfp4",
+    "gemm_fp32",
     "rope3d",
 ]
