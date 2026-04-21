@@ -97,6 +97,15 @@ PYBIND11_MODULE(_cuda_ops, m) {
         "    alpha: Scaling factor for A @ B\n"
         "    beta: Scaling factor for C");
 
+  m.def("gemm_gelu_fused", &ac4k::gemm_gelu_fused,
+        "Fused FP32 GEMM + GELU Activation\n\n"
+        "C = GELU(A @ B)\n"
+        "where GELU(x) = x * 0.5 * (1 + erf(x / sqrt(2)))\n\n"
+        "Args:\n"
+        "    C: Output tensor [M, N], float32\n"
+        "    A: Input tensor [M, K], float32\n"
+        "    B: Input tensor [K, N], float32");
+
   //-------------------------------------------------------------------------
   // RoPE Operators
   //-------------------------------------------------------------------------

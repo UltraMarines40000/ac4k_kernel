@@ -55,6 +55,13 @@ void gemm_fp32(torch::Tensor &C, torch::Tensor const &A,
                torch::Tensor const &B, float alpha, float beta);
 
 //===----------------------------------------------------------------------===//
+// Fused GEMM + GELU kernel interface
+//===----------------------------------------------------------------------===//
+
+void gemm_gelu_fused(torch::Tensor &C, torch::Tensor const &A,
+                     torch::Tensor const &B);
+
+//===----------------------------------------------------------------------===//
 // RoPE kernel interface
 //===----------------------------------------------------------------------===//
 

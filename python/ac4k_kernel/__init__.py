@@ -37,6 +37,7 @@ try:
 
     # GEMM - import Python wrapper (not raw C++ binding) for user-friendly API
     from .ops.gemm import gemm_fp32
+    from .ops.gemm_gelu import gemm_gelu_fused
 
 except ImportError:
     try:
@@ -92,5 +93,6 @@ __all__ = [
     "quantize_int8",
     "linear_nvfp4",
     "gemm_fp32",
+    "gemm_gelu_fused",
     "rope3d",
 ]

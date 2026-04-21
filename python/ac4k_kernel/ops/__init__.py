@@ -8,6 +8,7 @@ from .attention import attention, mha_nvfp4_fwd, mha_int8_x_fp8_fwd
 from .sparse_linear_attention import SparseLinearAttention
 from .rope_3d import rope3d, rope3d_kernel
 from .gemm import gemm_fp32
+from .gemm_gelu import gemm_gelu_fused
 
 __all__ = [
     # High-level APIs
@@ -17,6 +18,7 @@ __all__ = [
     "linear",
     "rope3d",
     "gemm_fp32",
+    "gemm_gelu_fused",
     # Direct kernel access (zero-overhead)
     "mha_nvfp4_fwd",
     "mha_int8_x_fp8_fwd",
